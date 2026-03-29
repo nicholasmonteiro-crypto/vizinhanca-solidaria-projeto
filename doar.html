@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fazer Doação — Vizinhança Solidária</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>🤝 Vizinhança Solidária</h1>
+    <p>Cadastre um alimento disponível para doação</p>
+    <a href="index.html" class="btn-secondary">← Voltar</a>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <h2>Nova Doação</h2>
+
+      <div class="campo">
+        <label for="item">Nome do alimento *</label>
+        <input type="text" id="item" placeholder="Ex: Bananas, Arroz (1kg), Pão caseiro..." />
+      </div>
+
+      <div class="campo">
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" rows="3" placeholder="Ex: Bananas bem maduras, ótimas para vitamina. Colhidas hoje."></textarea>
+      </div>
+
+      <div class="campo">
+        <label for="bairro">Bairro *</label>
+        <input type="text" id="bairro" placeholder="Ex: Centro, Jardim Paulista..." />
+      </div>
+
+      <div class="campo">
+        <label for="contato">Contato (WhatsApp ou telefone) *</label>
+        <input type="text" id="contato" placeholder="Ex: (11) 99999-9999" />
+      </div>
+
+      <button class="btn-primary" onclick="cadastrarDoacao()">Publicar Doação</button>
+      <p id="mensagem-sucesso" class="mensagem-sucesso" style="display:none;">✅ Doação publicada com sucesso!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projeto acadêmico — Desenvolvimento de Software para a Sociedade</p>
+  </footer>
+
+  <script src="src/js/app.js"></script>
+</body>
+</html>
