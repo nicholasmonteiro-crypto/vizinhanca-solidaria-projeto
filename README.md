@@ -1,10 +1,10 @@
-# 🤝 Vizinhança Solidária
+# Vizinhança Solidária
 
 > Plataforma web simples para conectar vizinhos que têm alimentos sobrando com quem precisa — sem burocracia, sem app, direto pelo navegador.
 
 ---
 
-## 📌 Sobre o Projeto
+## Sobre o Projeto
 
 **Vizinhança Solidária** é um projeto desenvolvido para a disciplina de *Desenvolvimento de Software para a Sociedade*. A ideia surgiu da observação de um problema cotidiano: enquanto muitas pessoas descartam alimentos que sobram, frutas do quintal ou produtos próximos do vencimento, outras pessoas na mesma vizinhança podem estar precisando.
 
@@ -12,13 +12,13 @@ Soluções existentes como o *Comida Invisível* e o *OLIO* (internacional) são
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 Reduzir o desperdício de alimentos e promover a solidariedade comunitária, conectando doadores e receptores de alimentos dentro de uma mesma comunidade ou bairro.
 
 ---
 
-## ✨ Funcionalidades (MVP)
+## Funcionalidades (MVP)
 
 - 📋 **Formulário de cadastro de doação** — nome do item, descrição, bairro e contato
 - 📦 **Lista de doações disponíveis** — cards com as informações de cada doação
@@ -27,7 +27,7 @@ Reduzir o desperdício de alimentos e promover a solidariedade comunitária, con
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 | Tecnologia | Uso |
 |------------|-----|
@@ -38,7 +38,7 @@ Reduzir o desperdício de alimentos e promover a solidariedade comunitária, con
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 vizinhanca-solidaria/
@@ -60,7 +60,7 @@ vizinhanca-solidaria/
 
 ---
 
-## 🚀 Como Executar
+## Como Executar
 
 1. Clone o repositório:
    ```bash
@@ -71,7 +71,7 @@ vizinhanca-solidaria/
 
 ---
 
-## 📅 Cronograma
+##Cronograma
 
 | Período | Meta |
 |---------|------|
@@ -84,12 +84,12 @@ vizinhanca-solidaria/
 
 ---
 
-## 👤 Autor
+##Autor
 
-Desenvolvido como projeto individual para a disciplina de **Desenvolvimento de Software para a Sociedade**.
+Desenvolvido como projeto individual para a disciplina de **Projeto em Computação Aplicada**.
 
 ---
 
-## 📄 Licença
+## Licença
 
 Este projeto é de uso acadêmico e aberto para contribuições.
