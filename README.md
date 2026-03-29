@@ -20,10 +20,10 @@ Reduzir o desperdício de alimentos e promover a solidariedade comunitária, con
 
 ## Funcionalidades (MVP)
 
-- 📋 **Formulário de cadastro de doação** — nome do item, descrição, bairro e contato
-- 📦 **Lista de doações disponíveis** — cards com as informações de cada doação
-- 🔍 **Filtro por bairro** — para encontrar doações próximas
-- 💾 **Armazenamento local** — sem necessidade de backend (usa `localStorage`)
+-  **Formulário de cadastro de doação** — nome do item, descrição, bairro e contato
+-  **Lista de doações disponíveis** — cards com as informações de cada doação
+-  **Filtro por bairro** — para encontrar doações próximas
+-  **Armazenamento local** — sem necessidade de backend (usa `localStorage`)
 
 ---
 
