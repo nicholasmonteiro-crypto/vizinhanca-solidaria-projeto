@@ -80,7 +80,6 @@ vizinhanca-solidaria/
 | Semanas 5–8 | JavaScript: formulário e lista de doações |
 | Semanas 9–12 | Filtro por bairro e melhorias de UX |
 | Semanas 13–14 | Testes, documentação e refinamento |
-| Semana 15 | Apresentação final |
 
 ---
 
