@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fazer Doação — Vizinhança Solidária</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="src/css/style.css" />
 </head>
 <body>
@@ -15,31 +18,35 @@
   </header>
 
   <main>
-    <section class="form-container">
-      <h2>Nova Doação</h2>
+    <section class="form-container" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Nova Doação</h2>
 
-      <div class="campo">
+      <div class="campo campo-flutuante">
+        <input type="text" id="item" placeholder=" " required autocomplete="off" />
         <label for="item">Nome do alimento *</label>
-        <input type="text" id="item" placeholder="Ex: Bananas, Arroz (1kg), Pão caseiro..." />
+        <span class="mensagem-erro" role="alert"></span>
       </div>
 
-      <div class="campo">
-        <label for="descricao">Descrição</label>
-        <textarea id="descricao" rows="3" placeholder="Ex: Bananas bem maduras, ótimas para vitamina. Colhidas hoje."></textarea>
+      <div class="campo campo-flutuante">
+        <textarea id="descricao" rows="3" placeholder=" "></textarea>
+        <label for="descricao">Descrição (opcional)</label>
+        <span class="mensagem-erro" role="alert"></span>
       </div>
 
-      <div class="campo">
+      <div class="campo campo-flutuante">
+        <input type="text" id="bairro" placeholder=" " required autocomplete="off" />
         <label for="bairro">Bairro *</label>
-        <input type="text" id="bairro" placeholder="Ex: Centro, Jardim Paulista..." />
+        <span class="mensagem-erro" role="alert"></span>
       </div>
 
-      <div class="campo">
+      <div class="campo campo-flutuante">
+        <input type="text" id="contato" placeholder=" " required autocomplete="tel" />
         <label for="contato">Contato (WhatsApp ou telefone) *</label>
-        <input type="text" id="contato" placeholder="Ex: (11) 99999-9999" />
+        <span class="mensagem-erro" role="alert"></span>
       </div>
 
-      <button class="btn-primary" onclick="cadastrarDoacao()">Publicar Doação</button>
-      <p id="mensagem-sucesso" class="mensagem-sucesso" style="display:none;">✅ Doação publicada com sucesso!</p>
+      <button type="button" class="btn-primary">Publicar Doação</button>
+      <p id="mensagem-sucesso" class="mensagem-sucesso" style="display:none;" role="status">✅ Doação publicada com sucesso!</p>
     </section>
   </main>
 
