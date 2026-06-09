@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fazer Doação — Vizinhança Solidária</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>🤝 Vizinhança Solidária</h1>
+    <p>Cadastre um alimento disponível para doação</p>
+    <a href="index.html" class="btn-secondary">← Voltar</a>
+  </header>
+
+  <main>
+    <section class="form-container" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Nova Doação</h2>
+
+      <div class="campo campo-flutuante">
+        <input type="text" id="item" placeholder=" " required autocomplete="off" />
+        <label for="item">Nome do alimento *</label>
+        <span class="mensagem-erro" role="alert"></span>
+      </div>
+
+      <div class="campo campo-flutuante">
+        <textarea id="descricao" rows="3" placeholder=" "></textarea>
+        <label for="descricao">Descrição (opcional)</label>
+        <span class="mensagem-erro" role="alert"></span>
+      </div>
+
+      <div class="campo campo-flutuante">
+        <input type="text" id="bairro" placeholder=" " required autocomplete="off" />
+        <label for="bairro">Bairro *</label>
+        <span class="mensagem-erro" role="alert"></span>
+      </div>
+
+      <div class="campo campo-flutuante">
+        <input type="text" id="contato" placeholder=" " required autocomplete="tel" />
+        <label for="contato">Contato (WhatsApp ou telefone) *</label>
+        <span class="mensagem-erro" role="alert"></span>
+      </div>
+
+      <button type="button" class="btn-primary">Publicar Doação</button>
+      <p id="mensagem-sucesso" class="mensagem-sucesso" style="display:none;" role="status">✅ Doação publicada com sucesso!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projeto acadêmico — Desenvolvimento de Software para a Sociedade</p>
+  </footer>
+
+  <script src="src/js/app.js"></script>
+</body>
+</html>
