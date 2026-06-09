@@ -1,4 +1,4 @@
-# 🤝 Vizinhança Solidária
+# Vizinhança Solidária
 
 > Plataforma web simples para conectar vizinhos que têm alimentos sobrando com quem precisa — sem burocracia, sem app, direto pelo navegador.
 
