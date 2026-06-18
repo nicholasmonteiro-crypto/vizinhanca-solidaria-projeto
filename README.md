@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Contexto do Projeto Original
+## Contexto do Projeto Original
 
 ### Descrição
 O **Vizinhança Solidária** foi concebido como um projeto acadêmico para reduzir o desperdício de alimentos e aproximar doadores e receptores em nível local. A proposta inicial era um sistema leve, com duas páginas HTML, para publicar e visualizar doações no próprio navegador.
@@ -27,7 +27,7 @@ O **Vizinhança Solidária** foi concebido como um projeto acadêmico para reduz
 
 ---
 
-## 🚀 Melhorias Propostas
+## Melhorias Propostas
 
 ### Melhoria 1: Confiabilidade dos dados e identificadores
 **Problema:** IDs baseados em tempo podem colidir e a leitura do armazenamento local pode falhar sem fallback.  
@@ -49,7 +49,7 @@ O **Vizinhança Solidária** foi concebido como um projeto acadêmico para reduz
 
 ---
 
-## 📅 Cronograma de Implementação
+## Cronograma de Implementação
 
 ### Mês 1: Análise e Setup
 - [x] Análise detalhada do código existente
@@ -71,7 +71,7 @@ O **Vizinhança Solidária** foi concebido como um projeto acadêmico para reduz
 
 ---
 
-## 📊 Resultados das Melhorias
+## Resultados das Melhorias
 
 ### Antes
 ![Screenshot antes](docs/antes.png)
@@ -96,7 +96,7 @@ O **Vizinhança Solidária** foi concebido como um projeto acadêmico para reduz
 
 ---
 
-## ✅ Melhorias Implementadas nesta Versão
+## Melhorias Implementadas nesta Versão
 
 - `fix`: uso de `crypto.randomUUID()` para IDs de doação
 - `fix`: tratamento de erro nas leituras de `localStorage`
@@ -131,7 +131,7 @@ vizinhanca-solidaria/
 
 ---
 
-## 🚀 Como Executar
+## Como Executar
 
 1. Clone o repositório:
    ```bash
