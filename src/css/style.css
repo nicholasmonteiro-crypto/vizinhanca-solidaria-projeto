@@ -490,6 +490,17 @@ main {
   display: block;
 }
 
+.aviso-privacidade-contato {
+  margin-top: 0.65rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #f2d28a;
+  background-color: #fff8e1;
+  color: #6b5200;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
 .mensagem-sucesso {
   margin-top: 1rem;
   padding: 0.85rem 1rem;
