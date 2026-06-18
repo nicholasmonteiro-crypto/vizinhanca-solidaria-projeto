@@ -98,8 +98,8 @@ const regrasValidacao = {
     mensagem: 'Informe o bairro (mín. 2 caracteres).'
   },
   contato: {
-    validar: (v) => v.trim().length >= 8,
-    mensagem: 'Informe um contato válido (mín. 8 caracteres).'
+    validar: (v) => /^(\+55\s?)?\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/.test(v.trim()),
+    mensagem: 'Informe um telefone válido (ex: 11 99999-9999)'
   },
   descricao: {
     validar: () => true,
