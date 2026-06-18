@@ -22,8 +22,14 @@ function salvarDoacoes(doacoes) {
   localStorage.setItem(CHAVE_LOCAL, JSON.stringify(doacoes));
 }
 
+function getOrdemDoacao(doacao) {
+  if (typeof doacao.criadoEm === 'number') return doacao.criadoEm;
+  if (typeof doacao.id === 'number') return doacao.id;
+  return 0;
+}
+
 function ordenarPorDataRecente(doacoes) {
-  return [...doacoes].sort((a, b) => (b.id || 0) - (a.id || 0));
+  return [...doacoes].sort((a, b) => getOrdemDoacao(b) - getOrdemDoacao(a));
 }
 
 function getDoacoesDisponiveis() {
@@ -161,7 +167,8 @@ function cadastrarDoacao() {
   const contato = document.getElementById('contato').value.trim();
 
   const novaDoacao = {
-    id: Date.now(),
+    id: crypto.randomUUID(),
+    criadoEm: Date.now(),
     item,
     descricao,
     bairro,
