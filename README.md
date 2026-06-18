@@ -74,14 +74,12 @@ O **Vizinhança Solidária** foi concebido como um projeto acadêmico para reduz
 ## Resultados das Melhorias
 
 ### Antes
-![Screenshot antes](docs/antes.png)
 - Risco de colisão de IDs em cadastros muito próximos
 - Falta de tratamento robusto na leitura de armazenamento local
 - Busca limitada apenas ao bairro
 - Listagem sem paginação em volumes maiores
 
 ### Depois
-![Screenshot depois](docs/depois.png)
 - IDs únicos com `crypto.randomUUID()`
 - Leitura de `localStorage` com tratamento de exceções
 - Busca por bairro **e** nome do alimento
