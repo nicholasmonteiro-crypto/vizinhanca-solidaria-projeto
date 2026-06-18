@@ -14,8 +14,13 @@ function escaparHTML(texto) {
 }
 
 function getDoacoes() {
-  const dados = localStorage.getItem(CHAVE_LOCAL);
-  return dados ? JSON.parse(dados) : [];
+  try {
+    const dados = localStorage.getItem(CHAVE_LOCAL);
+    const parsed = dados ? JSON.parse(dados) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
 }
 
 function salvarDoacoes(doacoes) {
