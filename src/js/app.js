@@ -207,7 +207,7 @@ function cadastrarDoacao() {
 
 function marcarComoEntregue(id) {
   const doacoes = getDoacoes();
-  const index = doacoes.findIndex(d => d.id === id);
+  const index = doacoes.findIndex(d => String(d.id) === String(id));
   if (index === -1) return;
 
   doacoes[index].status = 'entregue';
@@ -218,14 +218,14 @@ function marcarComoEntregue(id) {
 
 function excluirDoacao(id) {
   const doacoes = getDoacoes();
-  const doacao = doacoes.find(d => d.id === id);
+  const doacao = doacoes.find(d => String(d.id) === String(id));
   if (!doacao) return;
 
   if (!confirm(`Deseja excluir a doação "${doacao.item}"? Esta ação não pode ser desfeita.`)) {
     return;
   }
 
-  const filtradas = doacoes.filter(d => d.id !== id);
+  const filtradas = doacoes.filter(d => String(d.id) !== String(id));
   salvarDoacoes(filtradas);
   mostrarToast(`"${doacao.item}" foi removido.`, 'sucesso');
   filtrarDoacoes();
@@ -291,7 +291,10 @@ function filtrarDoacoes() {
   const filtro = filtroInput ? filtroInput.value.toLowerCase().trim() : '';
   const disponiveis = getDoacoesDisponiveis();
   const filtradas = filtro
-    ? disponiveis.filter(d => d.bairro.toLowerCase().includes(filtro))
+    ? disponiveis.filter(d =>
+      d.bairro.toLowerCase().includes(filtro)
+      || d.item.toLowerCase().includes(filtro)
+    )
     : disponiveis;
 
   renderizarDoacoes(filtradas, filtro.length > 0);
@@ -312,7 +315,7 @@ function initListagem() {
     const btn = e.target.closest('[data-acao]');
     if (!btn) return;
 
-    const id = Number(btn.dataset.id);
+    const id = btn.dataset.id;
     const acao = btn.dataset.acao;
 
     if (acao === 'entregue') marcarComoEntregue(id);
