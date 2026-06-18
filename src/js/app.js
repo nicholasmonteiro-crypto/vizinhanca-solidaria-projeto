@@ -233,6 +233,11 @@ function excluirDoacao(id) {
 
 // ---- Listagem de doações ----
 
+const TAMANHO_PAGINA = 12;
+let limiteExibicao = TAMANHO_PAGINA;
+let ultimaListaFiltrada = [];
+let ultimoFiltroAtivo = false;
+
 function renderizarEstadoVazio(filtroAtivo) {
   if (filtroAtivo) {
     return `
@@ -262,10 +267,13 @@ function renderizarDoacoes(lista, filtroAtivo = false) {
 
   if (lista.length === 0) {
     container.innerHTML = renderizarEstadoVazio(filtroAtivo);
+    atualizarPaginacao(0);
     return;
   }
 
-  container.innerHTML = lista.map(d => `
+  const doacoesVisiveis = lista.slice(0, limiteExibicao);
+
+  container.innerHTML = doacoesVisiveis.map(d => `
     <article class="card" aria-label="Doação: ${escaparHTML(d.item)}">
       <h3>${escaparHTML(d.item)}</h3>
       ${d.descricao ? `<p class="descricao">${escaparHTML(d.descricao)}</p>` : ''}
@@ -284,31 +292,55 @@ function renderizarDoacoes(lista, filtroAtivo = false) {
       </div>
     </article>
   `).join('');
+
+  atualizarPaginacao(lista.length);
 }
 
-function filtrarDoacoes() {
+function atualizarPaginacao(totalFiltradas) {
+  const botaoCarregarMais = document.getElementById('btn-carregar-mais');
+  if (!botaoCarregarMais) return;
+
+  const podeCarregarMais = totalFiltradas > limiteExibicao;
+  botaoCarregarMais.hidden = !podeCarregarMais;
+}
+
+function filtrarDoacoes(resetPaginacao = true) {
   const filtroInput = document.getElementById('filtroBairro');
   const filtro = filtroInput ? filtroInput.value.toLowerCase().trim() : '';
   const disponiveis = getDoacoesDisponiveis();
-  const filtradas = filtro
+  const listaFiltrada = filtro
     ? disponiveis.filter(d =>
       d.bairro.toLowerCase().includes(filtro)
       || d.item.toLowerCase().includes(filtro)
     )
     : disponiveis;
 
-  renderizarDoacoes(filtradas, filtro.length > 0);
+  if (resetPaginacao) {
+    limiteExibicao = TAMANHO_PAGINA;
+  }
+
+  ultimaListaFiltrada = listaFiltrada;
+  ultimoFiltroAtivo = filtro.length > 0;
+  renderizarDoacoes(ultimaListaFiltrada, ultimoFiltroAtivo);
 }
 
 function initListagem() {
   const container = document.getElementById('lista-doacoes');
   if (!container) return;
 
-  renderizarDoacoes(getDoacoesDisponiveis());
+  filtrarDoacoes();
 
   const filtroInput = document.getElementById('filtroBairro');
   if (filtroInput) {
-    filtroInput.addEventListener('input', filtrarDoacoes);
+    filtroInput.addEventListener('input', () => filtrarDoacoes(true));
+  }
+
+  const botaoCarregarMais = document.getElementById('btn-carregar-mais');
+  if (botaoCarregarMais) {
+    botaoCarregarMais.addEventListener('click', () => {
+      limiteExibicao += TAMANHO_PAGINA;
+      renderizarDoacoes(ultimaListaFiltrada, ultimoFiltroAtivo);
+    });
   }
 
   container.addEventListener('click', (e) => {

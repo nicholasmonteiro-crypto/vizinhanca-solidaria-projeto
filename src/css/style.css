@@ -254,6 +254,35 @@ main {
   gap: 1.25rem;
 }
 
+.paginacao-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.btn-carregar-mais {
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: var(--green-medium);
+  color: white;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.7rem 1.3rem;
+  cursor: pointer;
+  transition: transform var(--transition), background-color var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.2);
+}
+
+.btn-carregar-mais:hover {
+  background-color: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+.btn-carregar-mais:active {
+  transform: scale(0.97);
+}
+
 /* === CARD === */
 .card {
   background: white;
